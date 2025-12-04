@@ -3,78 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-
-    <!-- Link CSS -->
+    <title>Dinda Shalfa Destyra | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- Navigation Bar -->
     <nav>
-        <h1>My Portfolio</h1>
+        <h2 class="logo">Dinda Shalfa Destyra</h2>
 
         <ul>
             <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About Me</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <!-- Dark/Light Mode Toggle -->
-        <button id="mode-toggle">🌙</button>
+        <button id="theme-toggle">Dark Mode</button>
     </nav>
 
-    <!-- HOME SECTION -->
+
+    <!-- HOME -->
     <section id="home" class="section">
-        <h2>Welcome!</h2>
-        <p>Hello, I'm <strong>(Your Name)</strong>.  
-        This is my personal portfolio where I showcase my projects, skills, and experience.</p>
+        <h1>Hello, I'm <span class="highlight">Dinda Shalfa Destyra</span></h1>
+        <p>Welcome to my personal portfolio website.</p>
+
+        <img src="assets/images/profile.jpg" class="home-img" alt="Profile photo of Dinda">
     </section>
 
-    <!-- PROJECTS SECTION -->
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>
+            I am a driven Multimedia Computing student specializing in transforming 
+            creative concepts into engaging, functional digital experiences. My portfolio 
+            showcases the intersection of my technical coding skills and my visual design 
+            expertise.
+        </p>
+
+        <img src="assets/images/about-photo.jpg" class="about-img" alt="About Dinda">
+    </section>
+
+
+    <!-- PROJECTS -->
     <section id="projects" class="section">
         <h2>My Projects</h2>
 
         <div class="project">
+            <img src="assets/images/project1.jpg" alt="Project 1">
             <h3>Project 1</h3>
-            <p>Short description of the project. You can add screenshots or links if you want.</p>
+            <p>Description of project 1.</p>
         </div>
 
         <div class="project">
+            <img src="assets/images/project2.jpg" alt="Project 2">
             <h3>Project 2</h3>
-            <p>Description of another project you've worked on.</p>
+            <p>Description of project 2.</p>
         </div>
 
         <div class="project">
+            <img src="assets/images/project3.jpg" alt="Project 3">
             <h3>Project 3</h3>
-            <p>Include details about the technologies used and what you learned!</p>
+            <p>Description of project 3.</p>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>Write about yourself here — your background, studies, interests, goals, and experience.</p>
-    </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- CONTACT -->
     <section id="contact" class="section">
         <h2>Contact Me</h2>
 
-        <p>Email me directly here:</p>
-        <p><a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <img src="assets/images/contact.jpg" class="contact-img" alt="Contact Image">
 
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <p>Email: yourname@example.com</p>
     </section>
 
-    <!-- Link JS -->
     <script src="script.js"></script>
+
 </body>
 </html>
+
+ 
