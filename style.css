@@ -4,6 +4,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 /* --------------------
+   LIGHT & DARK MODE VARIABLES
+-------------------- */
+
+:root {
+    --bg: #ffffff;
+    --text: #222;
+    --nav-bg: #A7C7E7;     /* baby blue */
+    --accent: #F7CFE3;     /* soft pink */
+    --card-bg: #ffffff;
+    --border: #A7C7E7;
+}
+
+body.dark-mode {
+    --bg: #1d1f27;
+    --text: #f8f8f8;
+    --nav-bg: #2b2e3a;     /* dark navy */
+    --accent: #F7CFE3;     /* keep pink highlight */
+    --card-bg: #2b2e3a;
+    --border: #F7CFE3;
+}
+
+/* --------------------
    GLOBAL STYLES
 -------------------- */
 * {
@@ -14,9 +36,10 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    background: #FFFFFF;
-    color: #222;
+    background: var(--bg);
+    color: var(--text);
     line-height: 1.6;
+    transition: background 0.4s, color 0.4s;
 }
 
 /* --------------------
@@ -26,14 +49,15 @@ nav {
     position: sticky;
     top: 0;
     width: 100%;
-    background: #A7C7E7; /* Baby Blue */
-    color: #222;
+    background: var(--nav-bg);
+    color: var(--text);
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 3px solid var(--accent);
     z-index: 100;
-    border-bottom: 3px solid #F7CFE3; /* Pink highlight */
+    transition: background 0.4s, color 0.4s;
 }
 
 nav h1 {
@@ -49,124 +73,101 @@ nav ul {
 }
 
 nav a {
-    color: #222;
+    color: var(--text);
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
 }
 
 nav a:hover {
-    color: #F7CFE3; /* Soft pink hover */
+    color: var(--accent);
 }
 
-/* --------------------
-   SECTIONS
--------------------- */
-.section {
-    padding: 80px 10%;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.6s ease;
-}
-
-.section h2 {
-    margin-bottom: 20px;
-    font-size: 32px;
-    font-weight: 600;
-    color: #A7C7E7; /* Baby blue title */
-}
-
-/* --------------------
-   HOME
--------------------- */
-#home {
-    text-align: center;
-    background: #F7CFE3; /* Soft pink */
-    color: #222;
-    padding: 100px 10%;
-    border-radius: 0 0 20px 20px;
-}
-
-/* --------------------
-   PROJECTS
--------------------- */
-.project {
-    background: #FFFFFF;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 12px;
-    border-left: 6px solid #A7C7E7; /* Baby Blue accent */
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.08);
-}
-
-.project h3 {
-    color: #F7CFE3; /* Pink headings */
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-/* --------------------
-   ABOUT
--------------------- */
-#about {
-    background: #FFFFFF;
-    border-radius: 12px;
-    border: 2px solid #A7C7E7;
-    padding: 40px;
-}
-
-/* --------------------
-   CONTACT FORM
--------------------- */
-form {
-    max-width: 500px;
-    margin-top: 20px;
-}
-
-form input,
-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 2px solid #A7C7E7;
-    border-radius: 10px;
-    background: #F7CFE3;
-}
-
-form textarea {
-    height: 120px;
-    resize: none;
-}
-
-button {
-    background: #A7C7E7;
-    color: #222;
+/* Dark mode toggle button */
+#mode-toggle {
+    background: var(--accent);
     border: none;
-    padding: 12px 20px;
+    padding: 8px 12px;
     border-radius: 8px;
     cursor: pointer;
-    font-weight: 600;
+    font-size: 18px;
+    transition: 0.3s;
 }
 
-button:hover {
-    background: #F7CFE3;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: white;
+    color: #222;
+    transition: 0.3s;
 }
 
-/* --------------------
-   RESPONSIVE DESIGN
--------------------- */
-@media (max-width: 700px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        background: #A7C7E7;
-        width: 100%;
-        padding: 20px;
-        margin-top: 20px;
-        border-radius: 5px;
-    }
-
-    nav ul.open {
-        display: flex;
-    }
+/* Dark mode */
+body.dark-mode {
+    background: #0d1b2a;
+    color: #f0f0f0;
 }
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #b3d9ff; /* baby blue */
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+}
+
+#theme-toggle {
+    padding: 8px 15px;
+    border: none;
+    background: #ffb3d9; /* soft pink */
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.section {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+h1 .highlight {
+    color: #7ab8ff;
+}
+
+/* IMAGES */
+.home-img, .about-img, .contact-img, .project img {
+    width: 250px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.project {
+    margin: 40px auto;
+    max-width: 400px;
+}
+
+/* Dark mode colors */
+body.dark-mode nav {
+    background: #1b263b;
+}
+
+body.dark-mode #theme-toggle {
+    background: #ff8ac4;
+}
+
+body.dark-mode a {
+    color: #fff;
+}
+
